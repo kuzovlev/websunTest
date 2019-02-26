@@ -1,16 +1,6 @@
 html {
   font-size: 62.5%;
 }
-@media screen and (max-width: 800px) {
-  html {
-    font-size: 50%;
-  }
-}
-@media screen and (max-width: 600px) {
-  html {
-    font-size: 40%;
-  }
-}
 
 body {
   font-size: 2rem;
@@ -29,11 +19,9 @@ body .container .left {
   display: inline-block;
   overflow: hidden;
 }
-@media screen and (max-width: 800px) {
-  body .container .left img {
-    width: 50%;
-    padding: 0;
-  }
+body .container .left img {
+  width: 100%;
+  max-width: 375px;
 }
 body .container .right {
   width: 55%;
@@ -56,20 +44,10 @@ body .container .right .top-preview-main {
 body .container .right .top-preview-main span {
   text-transform: uppercase;
 }
-@media screen and (max-width: 600px) {
-  body .container .right .top-preview-main span {
-    padding-top: 1rem;
-  }
-}
 body .container .right .preview-name-main {
   font-size: 4.1rem;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
-}
-@media screen and (max-width: 600px) {
-  body .container .right .preview-name-main img {
-    width: 100px;
-  }
 }
 body .container .right ul li {
   text-align: center;
@@ -82,7 +60,7 @@ body .container .start-button {
   text-decoration: none;
   color: #000;
   display: block;
-  margin: 20px 0 auto;
+  margin: 20px auto 0;
   text-align: center;
   line-height: 8rem;
   height: 8rem;
@@ -110,11 +88,6 @@ body .questions-page .top-text-container h5 {
   font-size: 3.6rem;
   line-height: 1.2;
 }
-@media screen and (max-width: 600px) {
-  body .questions-page .top-text-container h5 {
-    font-size: 2.2rem;
-  }
-}
 body .questions-page .top-text-container p {
   color: #444;
   font-size: 1.8rem;
@@ -134,11 +107,6 @@ body .questions-page .toggleQuestion {
   border-radius: 6px;
   background-color: #fff;
   font-size: 2.2rem;
-}
-@media screen and (max-width: 800px) {
-  body .questions-page .toggleQuestion {
-    width: 96%;
-  }
 }
 body .questions-page .toggleQuestion .question-header {
   display: block;
@@ -220,6 +188,52 @@ body .questions-page .toggleQuestion .question-check .answers .answer_box {
 
 .grey-bg {
   background: #afafb9;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+  html body .container {
+    display: grid;
+  }
+  html body .container .first {
+    float: none;
+    order: 1;
+    min-width: 100%;
+  }
+  html body .container .second {
+    float: none;
+    order: 2;
+    min-width: 100%;
+    text-align: center;
+  }
+  html body .container .third {
+    float: none;
+    min-width: 100%;
+    order: 3;
+  }
+  html body .container .toggleQuestion {
+    width: 96%;
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+  html body .container .left img {
+    width: 50%;
+    padding: 0;
+  }
+  html body .container .right .preview-name-main img {
+    width: 100px;
+  }
+  html body .container .right .preview-name-main span {
+    padding-top: 1rem;
+  }
+  html body .container .right .preview-name-main h5 {
+    font-size: 2.2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

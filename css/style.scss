@@ -1,11 +1,5 @@
 html {
   font-size: 62.5%;
-  @media screen and (max-width: 800px) {
-    font-size: 50%;
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 40%;
-  }
 }
 
 body {
@@ -22,11 +16,9 @@ body {
       float: left;
       display: inline-block;
       overflow: hidden;
-      @media screen and (max-width: 800px) {
-        img {
-          width: 50%;
-          padding: 0;
-        }
+      img {
+        width: 100%;
+        max-width: 375px;
       }
     }
     .right {
@@ -47,20 +39,12 @@ body {
         font-weight: 500;
         span {
           text-transform: uppercase;
-          @media screen and (max-width: 600px) {
-            padding-top: 1rem;
-          }
         }
       }
       .preview-name-main {
         font-size: 4.1rem;
         font-weight: 400;
         font-family: 'Open Sans', sans-serif;
-        @media screen and (max-width: 600px) {
-          img {
-            width: 100px;
-          }
-        }
       }
       ul {
         li {
@@ -76,7 +60,7 @@ body {
       text-decoration: none;
       color: #000;
       display: block;
-      margin: 20px 0 auto;
+      margin: 20px auto 0;
       text-align: center;
       line-height: 8rem;
       height: 8rem;
@@ -102,9 +86,6 @@ body {
         color: #fff;
         font-size: 3.6rem;
         line-height: 1.2;
-        @media screen and (max-width: 600px) {
-          font-size: 2.2rem;
-        }
       }
       p {
         color: #444;
@@ -126,9 +107,6 @@ body {
       border-radius: 6px;
       background-color: #fff;
       font-size: 2.2rem;
-      @media screen and (max-width: 800px){
-        width: 96%;
-      }
       .question-header {
         display: block;
         background: #000;
@@ -209,6 +187,66 @@ body {
     }
   }
 }
-.grey-bg{
+
+.grey-bg {
   background: #afafb9;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 50%;
+    body{
+      .container {
+        display: grid;
+        .first {
+          float: none;
+          order: 1;
+          min-width: 100%
+        }
+        .second {
+          float: none;
+          order: 2;
+          min-width: 100%;
+          text-align: center
+        }
+        .third {
+          float: none;
+          min-width: 100%;
+          order: 3;
+        }
+        .toggleQuestion {
+          width: 96%
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 40%;
+    body {
+      .container {
+        .left {
+          img {
+            width: 50%;
+            padding: 0;
+          }
+        }
+        .right {
+          .preview-name-main {
+            img {
+              width: 100px;
+            }
+            span {
+              padding-top: 1rem;
+            }
+            h5 {
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
